@@ -10,6 +10,8 @@ sidebar: home_sidebar
 
 AWS EC2 provides preconfigured machine images called [DLAMI](https://aws.amazon.com/machine-learning/amis/), which are servers hosted by Amazon that are specially dedicated to Deep Learning tasks. Setting up an AWS EC2 instance, even with DLAMI, can be daunting. But don't worry, we got you covered. In fact, Amazon has a sweet [step by step guide](https://aws.amazon.com/getting-started/tutorials/get-started-dlami/) to set it up and we are going to draw heavily from their tutorial.
 
+If you are returning to work and have previously completed the steps below, please go to the [returning to work](http://course-v3.fast.ai/update_aws.html) section.
+
 ## Pricing
 A `p2.xlarge` instance in Amazon which is what we suggest, is [$0.9 an hour](https://aws.amazon.com/ec2/instance-types/p2/).
 
@@ -127,6 +129,7 @@ in your terminal to get a folder with all the fast.ai materials.
 Then run these commands to install the necessary packages for experimenting with fast.ai and PyTorch:
 
 ``` bash
+conda update conda
 conda install -c pytorch pytorch-nightly cuda92
 conda install -c fastai torchvision-nightly
 conda install -c fastai fastai
@@ -135,7 +138,7 @@ conda install -c fastai fastai
 Next move into the directory where you will find the materials for the course by running:
 
 ``` bash
-cd course-v3/nbs
+cd course-v3/nbs/dl1
 ```
 
 Finally run
@@ -144,11 +147,12 @@ jupyter notebook
 ```
 in your terminal, and you can access the notebook at [localhost:8888](http://localhost:8888).
 
-Click on the *course-v3* folder, and your screen should look like this:
-
-<img alt="nb tuto" src="/images/jupyter.png" class="screenshot">
-
 Go back to the [first page](index.html) to see how to use this jupyter notebook and run the jupyter notebook tutorial. Come back here once you're finished and *don't forget to stop your instance* with the next step.
+
+If you have any problem while using the `fastai` library try running
+```
+conda install -c fastai fastai
+```
 
 ## Step 7: Stop your instance when you are done
 
@@ -158,9 +162,7 @@ When you finish working you must go back to your [AWS console](https://us-west-2
 
 To see how to open it again, update the course or the fastai library, go to the [Returning to work page](update_aws.html).
 
-If you no longer want to use that instance again, you can just terminate it. This means you will never be able to access the information in it, so be careful. To terminate an instance just choose terminate instead of stop.
-
-<img alt="terminate" src="/images/aws/terminate.png" class="screenshot">
+Note that you should press *Stop*, not *Terminate*. If you press *Terminate* it will remove your instance entirely and you will lose your work.
 
 ## References
 
@@ -168,4 +170,4 @@ https://aws.amazon.com/getting-started/tutorials/get-started-dlami/
 
 ---
 
-*Many thanks to Francisco Ingham for writing this guide.*
+*Many thanks to Francisco Ingham for writing the initial version of this guide.*
