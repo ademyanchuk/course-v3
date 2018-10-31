@@ -32,7 +32,7 @@ If you are returning to work and have previously completed the steps below, plea
 1. Before you start using your notebook, you need to install the necessary packages. You can do this by creating a code cell, and running:
 
     ```bash
-     !curl http://course-v3.fast.ai/setup/colab | bash
+     !curl https://course-v3.fast.ai/setup/colab | bash
     ```
 
     <img alt="create" src="/images/colab/05.png" class="screenshot">
@@ -44,6 +44,14 @@ If you are returning to work and have previously completed the steps below, plea
 1. On the new window click 'Yes'.
 
     <img alt="stop" src="/images/colab/08.png" class="screenshot">
+
+1. Delete, if any, cells that contain:
+
+    ```bash
+    %reload_ext autoreload
+    %autoreload 2
+    %matplotlib inline
+    ```
 
 ### Step 3: Saving your work
 
